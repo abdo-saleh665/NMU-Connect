@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* NMU Brand Colors - Crimson Red based on logo */
+  --color-primary: #A31D2B;
+  --color-primary-hover: #8A1824;
+  --color-primary-light: #FDF2F3;
+
+  /* Accent colors for a professional university look */
+  --color-accent-gold: #C4A35A;
+  --color-accent-navy: #1E3A5F;
+
+  /* Light mode backgrounds */
+  --color-background-light: #FAFAFA;
+  --color-background-dark: #121212;
+  --color-surface-light: #FFFFFF;
+  --color-surface-dark: #1E1E1E;
+
+  /* Text colors */
+  --color-text-main: #1A1A1A;
+  --color-text-sub: #4A4A4A;
+  --color-text-dark: #1A1A1A;
+  --color-text-muted: #6B6B6B;
+
+  /* Dark mode text colors */
+  --color-text-main-dark: #FFFFFF;
+  --color-text-sub-dark: #D0C0C0;
+
+  /* Typography */
+  --font-display: "Lexend", sans-serif;
+  --font-body: "Noto Sans", sans-serif;
+
+  /* Border radius */
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.icon-filled {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d1d5db;
+}
+
+/* Reset body */
+body {
+  margin: 0;
+}
+
+/* Global dark mode text colors */
+/* Ensure dark text turns white in dark mode */
+.dark {
+  color-scheme: dark;
+}
+
+.dark *:not([class*="text-primary"]):not([class*="text-green"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-blue"]) {
+  --tw-text-opacity: 1;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
